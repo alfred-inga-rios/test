@@ -25,3 +25,14 @@ jobs:
       working-directory: python-app
       run: |
         pytest tests/
+
+  sonarqube:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+    - name: SonarQube Scan
+      uses: sonarsource/sonarqube-scan-action@master
+      env:
+        SONAR_TOKEN: ${{secrets.SONAR_TOKEN}}
