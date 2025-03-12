@@ -20,7 +20,7 @@ jobs:
         python-version: '3.9'
 
     - name: Set up env
-      working-directory: pers-platform/services/pers-engine/app/lambdas
+      working-directory: python-app
       run: |
         pip install poetry
         poetry install --no-root
