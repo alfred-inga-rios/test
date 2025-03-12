@@ -1,9 +1,4 @@
-from whale_converter import to_whale_speak
-from whale_converter import to_whale_speak
-from whale_converter import to_whale_speak
-from whale_converter import to_whale_speak
-from whale_converter import to_whale_speak
-from whale_converter import to_whale_speak
+from src.whale_converter import to_whale_speak
 
 
 def test_to_whale_speak_basic():
