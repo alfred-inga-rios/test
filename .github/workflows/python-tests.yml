@@ -51,12 +51,12 @@ jobs:
         with:
           python-version: ${{ matrix.python }}
       - name: Set up env
-        working-directory: whale-app
+        working-directory: whale-app/app/lambdas
         run: |
           pip install poetry
           poetry install --no-root
       - name: Run tests
-        working-directory: whale-app
+        working-directory: whale-app/app/lambdas
         run: |
           poetry run pytest -m "not (integration or slow)" --cov=. --cov-report=xml:coverage.xml --cov-branch
       - name: SonarQube Scan

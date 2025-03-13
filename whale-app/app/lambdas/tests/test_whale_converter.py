@@ -1,4 +1,5 @@
-from src.whale_converter import make_whale_sound, to_whale_speak
+from src.lambda_package.whale_converter import to_whale_speak, make_whale_sound
+
 import pytest
 
 
@@ -30,6 +31,6 @@ def test_make_whale_sound():
     assert make_whale_sound(1) == "Oooo"
     assert make_whale_sound(2) == "OOoooooo"
     assert make_whale_sound(3) == "OOOooooooooo"
-    
+
     with pytest.raises(ValueError):
         make_whale_sound(4)
