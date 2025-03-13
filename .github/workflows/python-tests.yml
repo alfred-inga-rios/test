@@ -27,13 +27,17 @@ jobs:
     - name: Run tests
       working-directory: python-app
       run: |
-        make test
+        poetry run pytest -m "not (integration or slow)" --cov=. --cov-report=xml:coverage.xml --cov-branch
     - name: SonarQube Scan
       uses: SonarSource/sonarqube-scan-action@v5
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       with:
         projectBaseDir: python-app/
+        args: >
+            -Dsonar.organization=alfred-inga-rios
+            -Dsonar.projectKey=alfred-inga-rios-app
+            -Dsonar.python.coverage.reportPaths=coverage.xml
 
   sonarqubeScan2:
     name: SonarQube
