@@ -55,10 +55,14 @@ jobs:
         run: |
           pip install poetry
           poetry install --no-root
-      - name: Run tests
+      - name: Run unit tests
         working-directory: whale-app/app/lambdas
         run: |
-          poetry run pytest -m "not (integration or slow)" --cov=. --cov-report=xml:coverage.xml --cov-branch
+          make test-unit-sonarqube
+      - name: Run integration tests
+        working-directory: whale-app/app/lambdas
+        run: |
+          make test-integration-sonarqube
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v5
         env:
@@ -68,6 +72,6 @@ jobs:
           args: >
             -Dsonar.organization=alfred-inga-rios
             -Dsonar.projectKey=alfred-inga-rios-whale-app
-            -Dsonar.python.coverage.reportPaths=app/lambdas/coverage.xml
+            -Dsonar.python.coverage.reportPaths=app/lambdas/coverage_integration_tests.xml,app/lambdas/coverage_unit_tests.xml
             -Dsonar.sources=app/lambdas/src/
             -Dsonar.tests=app/lambdas/tests/

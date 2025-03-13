@@ -27,6 +27,7 @@ def test_to_whale_speak_special_chars():
     assert to_whale_speak("hello!@#$%") == "hll!@#$%"
 
 
+@pytest.mark.integration
 def test_make_whale_sound():
     assert make_whale_sound(1) == "Oooo"
     assert make_whale_sound(2) == "OOoooooo"
