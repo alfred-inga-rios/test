@@ -58,7 +58,7 @@ jobs:
       - name: Fix coverage source paths
         working-directory: whale-app
         run: |
-          sed -i 's|<source>.*</source>|<source>/github/workspace/whale-app</source>|g' coverage.xml      
+          sed -i 's|<source>.*</source>|<source>/github/workspace/test/whale-app</source>|g' coverage.xml      
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v5
         env:
