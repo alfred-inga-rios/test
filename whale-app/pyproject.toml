@@ -13,3 +13,8 @@ pytest-cov = "^6.0.0"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.coverage.run]
+branch = true
+source = ["src"]
+relative_files = true
