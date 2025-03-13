@@ -1,4 +1,5 @@
 from src.whale_converter import make_whale_sound, to_whale_speak
+import pytest
 
 
 def test_to_whale_speak_basic():
@@ -29,8 +30,6 @@ def test_make_whale_sound():
     assert make_whale_sound(1) == "Oooo"
     assert make_whale_sound(2) == "OOoooooo"
     assert make_whale_sound(3) == "OOOooooooooo"
-    try:
+    
+    with pytest.raises(ValueError):
         make_whale_sound(4)
-        assert False, "Should raise ValueError"
-    except ValueError:
-        pass
