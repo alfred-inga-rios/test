@@ -64,8 +64,8 @@ jobs:
           args: >
             -Dsonar.organization=alfred-inga-rios
             -Dsonar.projectKey=alfred-inga-rios-app
-            -Dsonar.python.coverage.reportPaths=coverage.xml
-            -Dsonar.sources=src/
-            -Dsonar.tests=tests/
-            -Dsonar.test.exclusions=tests/**
+            -Dsonar.python.coverage.reportPaths=whale-app/coverage.xml
+            -Dsonar.sources=whale-app/src/
+            -Dsonar.tests=whale-app/tests/
+            -Dsonar.test.exclusions=whale-app/tests/**
             -Dsonar.verbose=true
