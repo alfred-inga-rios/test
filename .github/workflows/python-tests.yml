@@ -55,6 +55,10 @@ jobs:
         working-directory: whale-app
         run: |
           poetry run pytest -m "not (integration or slow)" --cov=src --cov-report=xml:coverage.xml --cov-branch
+      - name: Fix coverage source paths
+        working-directory: whale-app
+        run: |
+          sed -i 's|<source>.*</source>|<source>/github/workspace/whale-app</source>|g' coverage.xml      
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v5
         env:
