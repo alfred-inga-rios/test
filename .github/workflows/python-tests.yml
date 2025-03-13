@@ -56,6 +56,7 @@ jobs:
         run: |
           poetry run pytest -m "not (integration or slow)" --cov=src --cov-report=xml:coverage.xml --cov-branch
       - name: SonarQube Scan
+        working-directory: whale-app
         uses: SonarSource/sonarqube-scan-action@v5
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
