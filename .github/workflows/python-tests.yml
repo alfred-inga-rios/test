@@ -58,7 +58,7 @@ jobs:
       - name: Run unit tests
         working-directory: whale-app/app/lambdas
         run: |
-          make test-unit-sonarqube
+          make test-unit
       - name: Run integration tests
         working-directory: whale-app/app/lambdas
         run: |
