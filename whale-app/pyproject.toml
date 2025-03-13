@@ -16,5 +16,5 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.coverage.run]
 branch = true
-source = ["src"]
+source = ["."]
 relative_files = true
