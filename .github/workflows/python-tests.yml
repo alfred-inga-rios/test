@@ -69,5 +69,5 @@ jobs:
             -Dsonar.organization=alfred-inga-rios
             -Dsonar.projectKey=alfred-inga-rios-whale-app
             -Dsonar.python.coverage.reportPaths=app/lambdas/coverage.xml
-            -Dsonar.sources=src/
-            -Dsonar.tests=tests/
+            -Dsonar.sources=app/lambdas/src/
+            -Dsonar.tests=app/lambdas/tests/
