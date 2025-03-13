@@ -62,7 +62,7 @@ jobs:
       - name: Run integration tests
         working-directory: whale-app/app/lambdas
         run: |
-          make test-integration-sonarqube
+          make test-integration
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v5
         env:
