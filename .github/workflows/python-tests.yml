@@ -65,3 +65,5 @@ jobs:
             -Dsonar.organization=alfred-inga-rios
             -Dsonar.projectKey=alfred-inga-rios-app
             -Dsonar.python.coverage.reportPaths=coverage.xml
+            -Dsonar.sources=src/
+            -Dsonar.tests=tests/
