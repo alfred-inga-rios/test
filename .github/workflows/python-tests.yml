@@ -58,7 +58,7 @@ jobs:
       - name: Run tests
         working-directory: whale-app/app/lambdas
         run: |
-          poetry run pytest -m "not (integration or slow)" --cov=. --cov-report=xml:coverage.xml --cov-branch
+          poetry run pytest -m "not (integration or slow)" --cov=src/lambda_package --cov-report=xml:coverage.xml --cov-branch
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v5
         env:
