@@ -54,7 +54,7 @@ jobs:
       - name: Run tests
         working-directory: whale-app
         run: |
-          poetry run pytest -m "not (integration or slow)" --cov=src --cov-report=xml:coverage.xml --cov-branch
+          poetry run pytest -m "not (integration or slow)" --cov=. --cov-report=xml:coverage.xml --cov-branch
       - name: Fix coverage source paths
         working-directory: whale-app
         run: |
